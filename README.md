@@ -1,15 +1,15 @@
-#MiniWorld
+# MiniWorld
 
 MiniWorld is a Minecraft (Spigot) utility plugin for easily creating temporary instances of Minecraft worlds!
 The intended use case for MiniWorld is for instanced dungeons, or other applications where a small temporary world is ideal.
 
-##Supported Versions:
+## Supported Versions:
 - Spigot 1.16.4
 
 MiniWorld may function with additional versions of Minecraft, however this is untested and not guaranteed.
 Support for pre-1.16 is not likely.
 
-##MiniWorld Commands:
+## MiniWorld Commands:
 
 Command | Arguments | Description
 ------- | --------- | -----------
@@ -22,7 +22,7 @@ Command | Arguments | Description
 
 Access to all commands is currently provided by the permission `miniworld.op`.
 
-##To-Do:
+## To-Do:
 
 - [ ] Edit the behavior of 'StopEntityMovement' to not affect entities in clones of MiniWorlds.
 - [ ] Come up with more things to add to the plugin. 
