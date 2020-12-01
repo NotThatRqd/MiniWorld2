@@ -17,7 +17,6 @@ public class StopEntityMovement implements Listener {
 
   /**
    * Prevents entities from moving while in a non-clone of a MiniWorld.
-   * TODO: Figure out a way to make this work without attributes carrying over to clones of the world.
    * @param e the EntitySpawnEvent.
    */
   @EventHandler
@@ -44,7 +43,6 @@ public class StopEntityMovement implements Listener {
 
   /**
    * Prevents entities from moving while in a non-clone of a MiniWorld.
-   * TODO: Figure out a way to make this work without attributes carrying over to clones of the world.
    * @param e the ChunkLoadEvent.
    */
   @EventHandler
