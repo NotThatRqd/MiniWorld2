@@ -22,6 +22,13 @@ Command | Arguments | Description
 
 Access to all commands is currently provided by the permission `miniworld.op`.
 
+## Configurable Options:
+
+Config Entry | Type | Description
+------------ | ----------- | -----------
+halt-mob-movement | boolean | Stops mobs from moving in non-cloned MiniWorlds.
+automatically-remove-empty-clones | boolean | Automatically removes clones of MiniWorlds once they're no longer inhabited.
+
 ## To-Do:
 
 - [ ] Edit the behavior of 'StopEntityMovement' to not affect entities in clones of MiniWorlds.
