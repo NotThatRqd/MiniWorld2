@@ -23,48 +23,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class MiniWorld extends JavaPlugin implements @NotNull Listener {
-  /*
-  TODO: FIX ME
-
-  Issues with this plugin....
-
-  -- Done --
-  Clones are placed in the directory of their parent, however, when you delete the parent, the clones stay
-  registered, causing all the clones to fuck up big time when the server tries to save them since their files
-  get deleted. They'll also regenerate once the server restarts.
-  Solve this by searching the list of worlds, then deleting each clone of the world before deleting the parent.
-  -- /Done --
-
-  -- Done --
-  World cloning doesn't actually work. Need to find a way to copy the files of a world, without copying clones,
-  then load the world in, rather than doing some stupid broken stuff. Be sure to save the world before you copy files,
-  otherwise any unsaved changes will not be cloned.
-  -- /Done --
-
-  -- Done --
-  Perhaps fill a chunk's base with bedrock rather than doing a single block?
-  -- /Done --
-
-  -- Done --
-  Need to differentiate temporary worlds and template worlds. Perhaps change the 'clone' nomenclature to reflect that
-  they're not mere 'clones', they're 'temporary clones' which shouldn't be kept after the server restarts.
-  -- /Done --
-
-  Also note: server should not restart unless it absolutely has to. Perhaps once a week if unavoidable, but definitely
-  not more than once a day at most.
-
-   */
-
-  /*
-  TODO: Potential Improvements:
-
-  Per-World Permissions?
-
-  Per-Sub-Command Permissions
-
-   TODO: Test using external plugin accessing the API for world creation, player transport, world cloning, and world
-    deletion.
-   */
 
   private static MiniWorld instance;
 
