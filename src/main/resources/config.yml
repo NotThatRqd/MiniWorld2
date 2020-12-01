@@ -1,0 +1,5 @@
+# Stops mobs from moving in non-cloned mini worlds
+halt-mob-movement: true
+
+# Automatically removes clones of MiniWorlds once they're no longer inhabited.
+automatically-remove-empty-clones: true

@@ -1,0 +1,10 @@
+main: com.thekdub.miniworld.MiniWorld
+name: MiniWorld
+version: 1.0.0
+author: TheKDub
+commands:
+  miniworld:
+    description: MiniWorld Management Command.
+    aliases: [mw]
+    permission: miniworld.op
+    usage: /MiniWorld (List | Create | Clone | Delete | GoTo) [WorldName]
