@@ -79,25 +79,21 @@ public class MiniWorldCloner {
     if (!mw.exists()) {
       return;
     }
-    new BukkitRunnable() {
-      public void run() {
-        for (File file : mw.listFiles()) {
-          if (file.isDirectory()) {
-            for (File f : file.listFiles()) {
-              if (f.getName().equalsIgnoreCase("clone")) {
-                if (!f.delete()) {
-                  try {
-                    FileDeleteStrategy.FORCE.delete(f);
-                  } catch (IOException e) {
-                    e.printStackTrace();
-                  }
-                }
+    for (File file : mw.listFiles()) {
+      if (file.isDirectory()) {
+        for (File f : file.listFiles()) {
+          if (f.getName().equalsIgnoreCase("clone")) {
+            if (!f.delete()) {
+              try {
+                FileDeleteStrategy.FORCE.delete(f);
+              } catch (IOException e) {
+                e.printStackTrace();
               }
             }
           }
         }
       }
-    }.runTaskAsynchronously(MiniWorld.getInstance());
+    }
   }
 
 }

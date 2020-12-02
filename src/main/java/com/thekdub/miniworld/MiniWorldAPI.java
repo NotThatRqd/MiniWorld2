@@ -70,18 +70,13 @@ public class MiniWorldAPI {
     while (folder.getParentFile().listFiles().length == 1) {
       folder = folder.getParentFile();
     }
-    File finalFolder = folder;
-    new BukkitRunnable() {
-      public void run() {
-        if (!finalFolder.delete()) {
-          try {
-            FileDeleteStrategy.FORCE.delete(finalFolder);
-          } catch (IOException e) {
-            e.printStackTrace();
-          }
-        }
+    if (!folder.delete()) {
+      try {
+        FileDeleteStrategy.FORCE.delete(folder);
+      } catch (IOException e) {
+        e.printStackTrace();
       }
-    }.runTaskAsynchronously(MiniWorld.getInstance());
+    }
   }
 
   /**
@@ -103,17 +98,13 @@ public class MiniWorldAPI {
     }
     Bukkit.unloadWorld(world, false);
     File folder = world.getWorldFolder();
-    new BukkitRunnable() {
-      public void run() {
-        if (!folder.delete()) {
-          try {
-            FileDeleteStrategy.FORCE.delete(folder);
-          } catch (IOException e) {
-            e.printStackTrace();
-          }
-        }
+    if (!folder.delete()) {
+      try {
+        FileDeleteStrategy.FORCE.delete(folder);
+      } catch (IOException e) {
+        e.printStackTrace();
       }
-    }.runTaskAsynchronously(MiniWorld.getInstance());
+    }
   }
 
 }
