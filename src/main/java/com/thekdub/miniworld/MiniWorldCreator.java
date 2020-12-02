@@ -10,6 +10,7 @@ public class MiniWorldCreator extends WorldCreator {
    */
   public MiniWorldCreator(String name) {
     super((name.startsWith("mw/") ? "" : "mw/") + name);
+    this.generateStructures(false);
     this.generator(new MiniWorldGenerator());
   }
 }
