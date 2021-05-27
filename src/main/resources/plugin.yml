@@ -6,6 +6,6 @@ api-version: 1.16
 commands:
   miniworld:
     description: MiniWorld Management Command.
-    aliases: [mw]
+    aliases: [ mw ]
     permission: miniworld.op
     usage: /MiniWorld (List | Create | Clone | Delete | GoTo) [WorldName]
