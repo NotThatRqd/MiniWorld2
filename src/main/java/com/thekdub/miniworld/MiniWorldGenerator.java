@@ -2,8 +2,8 @@ package com.thekdub.miniworld;
 
 import org.bukkit.World;
 import org.bukkit.generator.ChunkGenerator;
-import org.jetbrains.annotations.NotNull;
 
+import javax.annotation.Nonnull;
 import java.util.Random;
 
 public class MiniWorldGenerator extends ChunkGenerator {
@@ -17,7 +17,7 @@ public class MiniWorldGenerator extends ChunkGenerator {
 	 * @param biomeGrid unused.
 	 * @return the chunk data for the MiniWorld.
 	 */
-	public @NotNull ChunkData generateChunkData(@NotNull World world, @NotNull Random random, int x, int y, @NotNull
+	public @Nonnull ChunkData generateChunkData(@Nonnull World world, @Nonnull Random random, int x, int y, @Nonnull
 				BiomeGrid biomeGrid) {
 		return super.createChunkData(world);
 	}

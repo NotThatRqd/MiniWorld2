@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.World;
 
 import java.io.File;
+import java.util.Objects;
 
 public class MiniWorldLoader {
 	
@@ -26,7 +27,7 @@ public class MiniWorldLoader {
 		if (!mw.exists()) {
 			return;
 		}
-		for (File file : mw.listFiles()) {
+		for (File file : Objects.requireNonNull(mw.listFiles())) {
 			World world = Bukkit.createWorld(new MiniWorldCreator(file.getPath().replace("\\", "/")));
 		}
 	}
