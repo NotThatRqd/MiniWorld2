@@ -9,7 +9,7 @@ The intended use case for MiniWorld2 is for mini-games, instanced dungeons, or o
 a small temporary world is ideal. At this point there is no online Maven repository, you just have to
 download, build, and add it to your own local Maven repository if you want to use it.
 
-The original MiniWorld plugin was created by [TheKDub](https://github.com/thekdub). At first I was going to simply
+The original MiniWorld plugin was created by [TheKDub](https://github.com/thekdub). At first, I was going to simply
 update the old code, but at this point it seems it would be easier to simply re-write it as a whole, as the old code
 was very messy and to be honest I *hate* migrating legacy code.
 
