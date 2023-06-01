@@ -28,3 +28,5 @@ MiniWorld2 may function with additional versions of Minecraft, however this is u
 - [ ] Add createCloneOf
 - [ ] Add deleteWorld
 - [ ] Add deleteCloneWorld
+- [ ] Add WorldGuard integration
+- [ ] Rename MiniWorld2 --> MiniWorlds2
