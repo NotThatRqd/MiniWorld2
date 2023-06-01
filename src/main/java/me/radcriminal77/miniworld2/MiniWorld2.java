@@ -3,6 +3,7 @@ package me.radcriminal77.miniworld2;
 import com.onarandombox.MultiverseCore.MultiverseCore;
 import com.onarandombox.MultiverseCore.api.MVWorldManager;
 import me.radcriminal77.miniworld2.commands.CreateEmptyWorldCommand;
+import me.radcriminal77.miniworld2.commands.CreateMiniatureCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.generator.ChunkGenerator;
@@ -28,6 +29,7 @@ public final class MiniWorld2 extends JavaPlugin {
         mvWorldManager = multiverseCore.getMVWorldManager();
 
         this.getCommand("CreateVoidWorld").setExecutor(new CreateEmptyWorldCommand());
+        this.getCommand("CreateMiniature").setExecutor(new CreateMiniatureCommand());
     }
 
     @Override

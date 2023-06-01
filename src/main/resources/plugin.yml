@@ -9,5 +9,8 @@ commands:
   CreateVoidWorld:
     description: A helper command to create void worlds
     usage: /<command> world-name
+  CreateMiniature:
+    description: Creates a miniature (a temporary clone) of the provided world
+    usage: /<command> parent-world
 depend:
   - Multiverse-Core
