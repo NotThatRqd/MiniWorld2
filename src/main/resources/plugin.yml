@@ -6,7 +6,8 @@ authors:
   - TheKDub
   - RadCriminal77
 commands:
-  CreateEmptyWorld:
-    usage: /<command> name
+  CreateVoidWorld:
+    description: A helper command to create void worlds
+    usage: /<command> world-name
 depend:
   - Multiverse-Core

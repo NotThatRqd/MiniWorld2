@@ -1,9 +1,6 @@
 package me.radcriminal77.miniworld2;
 
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.World;
-import org.bukkit.WorldCreator;
+import org.bukkit.*;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,8 +20,41 @@ public class MiniWorld2Manager {
         return "mw2." + original;
     }
 
+    /**
+     * Helper function that simply makes an empty world with a bedrock platform (using the MultiVerse API)
+     * @param name The name of the world (must be a valid Bukkit world name or bad things might happen)
+     * @return The world created
+     */
     @NotNull
     public static World createEmptyWorld(@NotNull String name) {
+        // Create the world using Multiverse API
+        MiniWorld2.getMvWorldManager().addWorld(
+                name,                     // world name
+                World.Environment.NORMAL, // environment type
+                null,                     // world seed
+                WorldType.NORMAL,         // world type
+                false,                    // generate structures
+                "MiniWorld2:empty",       // custom generators
+                false                     // search for a safe spawn
+        );
+
+        // Get the created world
+        World world = Bukkit.getWorld(name);
+        assert world != null;
+
+        // Put a 32x1x32 pad of bedrock to start out
+        for (int x = -16; x < 16; x++) {
+            for (int z = -16; z < 16; z++) {
+                world.getBlockAt(x, 64, z).setType(Material.BEDROCK);
+            }
+        }
+
+        return world;
+    }
+
+    @NotNull
+    @Deprecated
+    public static World createEmptyWorldOld(@NotNull String name) {
         // Get the final name that is going to be used
         String worldName = convertToMiniWorldName(name);
 
