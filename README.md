@@ -24,8 +24,9 @@ MiniWorld2 may function with additional versions of Minecraft, however this is u
 
 ## Todo:
 - [x] Add createEmptyWorld
-- [ ] Add createCloneOf
-- [ ] Add deleteWorld
-- [ ] Add deleteCloneWorld
+- [x] Add createCloneOf
+- [x] Add deleteWorld
+- [x] Add deleteCloneWorld
 - [ ] Add WorldGuard integration
 - [ ] Rename MiniWorld2 --> MiniWorlds2
+- [ ] Add polish -- make commands have nice formatted responses
