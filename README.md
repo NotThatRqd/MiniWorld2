@@ -12,3 +12,6 @@ was very messy and to be honest I *hate* migrating legacy code.
 - Paper 1.19.4
 
 MiniWorld2 may function with additional versions of Minecraft, however this is untested and not guaranteed.
+
+## Todo:
+- [ ] Add Multiverse integration
