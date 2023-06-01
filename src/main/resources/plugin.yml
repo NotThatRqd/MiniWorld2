@@ -1,11 +1,7 @@
-main: com.thekdub.miniworld.MiniWorld
-name: MiniWorld
-version: 1.0.1
-author: TheKDub
-api-version: 1.16
-commands:
-  miniworld:
-    description: MiniWorld Management Command.
-    aliases: [ mw ]
-    permission: miniworld.op
-    usage: /MiniWorld (List | Create | Clone | Delete | GoTo) [WorldName]
+name: MiniWorld2
+version: '${project.version}'
+main: me.radcriminal77.miniworld2.MiniWorld2
+api-version: 1.19
+authors:
+  - TheKDub
+  - RadCriminal77
