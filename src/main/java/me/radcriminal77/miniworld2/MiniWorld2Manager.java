@@ -97,9 +97,7 @@ public class MiniWorld2Manager {
 
     public static void removeMiniature(@NotNull World world) {
         if (!world.getName().startsWith(MINIATURE_WORLD_PREFIX)) {
-            // todo: throw exception because someone tried to remove a world that wasn't a miniature
-            System.out.println("TRIED TO REMOVE A WORLD THAT WASN'T ACTUALLY A MINIATURE!!!!!");
-            return;
+            throw new IllegalArgumentException("Provided world was not a miniature world!");
         }
 
         MiniWorld2.getMvWorldManager().deleteWorld(world.getName());
