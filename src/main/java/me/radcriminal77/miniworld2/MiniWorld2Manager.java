@@ -63,7 +63,7 @@ public class MiniWorld2Manager {
      * @return The clone
      */
     @NotNull
-    public static World createMiniatureOf(World world) {
+    public static World createMiniatureOf(@NotNull World world) {
         // Get the id for this clone
         int cloneNum = numberOfMiniatures.getOrDefault(world, 0);
 
@@ -83,6 +83,11 @@ public class MiniWorld2Manager {
         return clonedWorld;
     }
 
+    /**
+     * Deletes a miniature world using the Multiverse API
+     * @param world The miniature world to delete
+     * @throws IllegalArgumentException if the world is not a miniature world
+     */
     public static void removeMiniature(@NotNull World world) {
         if (!world.getName().startsWith(MINIATURE_WORLD_PREFIX)) {
             throw new IllegalArgumentException("Provided world was not a miniature world!");
@@ -91,6 +96,9 @@ public class MiniWorld2Manager {
         MiniWorld2.getMvWorldManager().deleteWorld(world.getName());
     }
 
+    /**
+     * Loops over every world on the server and deletes it if it is a miniature world
+     */
     public static void cleanMiniatures() {
         for (World world : Bukkit.getWorlds()) {
             if (world.getName().startsWith(MINIATURE_WORLD_PREFIX)) {
