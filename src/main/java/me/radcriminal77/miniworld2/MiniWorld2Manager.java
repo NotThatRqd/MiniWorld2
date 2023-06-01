@@ -95,6 +95,24 @@ public class MiniWorld2Manager {
         return clonedWorld;
     }
 
+    public static void removeMiniature(@NotNull World world) {
+        if (!world.getName().startsWith(MINIATURE_WORLD_PREFIX)) {
+            // todo: throw exception because someone tried to remove a world that wasn't a miniature
+            System.out.println("TRIED TO REMOVE A WORLD THAT WASN'T ACTUALLY A MINIATURE!!!!!");
+            return;
+        }
+
+        MiniWorld2.getMvWorldManager().deleteWorld(world.getName());
+    }
+
+    public static void cleanMiniatures() {
+        for (World world : Bukkit.getWorlds()) {
+            if (world.getName().startsWith(MINIATURE_WORLD_PREFIX)) {
+                removeMiniature(world);
+            }
+        }
+    }
+
     @NotNull
     @Deprecated
     public static World createEmptyWorldOld(@NotNull String name) {

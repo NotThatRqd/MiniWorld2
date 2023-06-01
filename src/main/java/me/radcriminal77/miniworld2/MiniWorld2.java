@@ -33,6 +33,12 @@ public final class MiniWorld2 extends JavaPlugin {
     }
 
     @Override
+    public void onDisable() {
+        // Remove all miniatures created before MiniWorld2 gets turned off
+        MiniWorld2Manager.cleanMiniatures();
+    }
+
+    @Override
     public ChunkGenerator getDefaultWorldGenerator(@NotNull String worldName, String id) {
         if (id != null && id.equals("empty")) {
             Location spawnLocation = new Location(null, 0, 65, 0);
