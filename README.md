@@ -14,4 +14,7 @@ was very messy and to be honest I *hate* migrating legacy code.
 MiniWorld2 may function with additional versions of Minecraft, however this is untested and not guaranteed.
 
 ## Todo:
-- [ ] Add Multiverse integration
+- [x] Add createEmptyWorld
+- [ ] Add createCloneOf
+- [ ] Add deleteWorld
+- [ ] Add deleteCloneWorld
