@@ -8,3 +8,5 @@ authors:
 commands:
   CreateEmptyWorld:
     usage: /<command> name
+depend:
+  - Multiverse-Core
