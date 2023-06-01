@@ -4,6 +4,9 @@ import org.bukkit.*;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MiniWorld2Manager {
 
     /**
@@ -19,6 +22,8 @@ public class MiniWorld2Manager {
 
         return "mw2." + original;
     }
+
+    private static final String MINIATURE_WORLD_PREFIX = "mw2.miniature";
 
     /**
      * Helper function that simply makes an empty world with a bedrock platform (using the MultiVerse API)
@@ -50,6 +55,44 @@ public class MiniWorld2Manager {
         }
 
         return world;
+    }
+
+    /**
+     * Keeps track of how many clones have been created for a given world.
+     * <p>
+     * The only problem this may have is that if too many clones for one
+     * world are created the integer limit could be reached. Not like that
+     * will likely happen though.
+     */
+    private static final Map<World, Integer> numberOfMiniatures = new HashMap<>();
+
+    /**
+     * Creates a "miniature" world <i>(a temporary clone of a world)</i>.
+     * Cloned world name will be named using this format:
+     * mw2.miniature_[clone id]_[parent world name]</pre>
+     *
+     * @param world The world to clone
+     * @return The clone
+     */
+    @NotNull
+    public static World createMiniatureOf(World world) {
+        // Get the id for this clone
+        int cloneNum = numberOfMiniatures.getOrDefault(world, 0);
+
+        // Increment numberOfClones
+        numberOfMiniatures.put(world, cloneNum + 1);
+
+        // Get the name that will be used for this clone
+        String cloneName = MINIATURE_WORLD_PREFIX + "_" + cloneNum + "_" + world.getName();
+
+        // Clone the world with Multiverse
+        MiniWorld2.getMvWorldManager().cloneWorld(world.getName(), cloneName);
+
+        // Get the clone we just made
+        World clonedWorld = Bukkit.getWorld(cloneName);
+        assert clonedWorld != null;
+
+        return clonedWorld;
     }
 
     @NotNull
