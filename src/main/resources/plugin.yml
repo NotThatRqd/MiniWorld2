@@ -2,6 +2,7 @@ name: MiniWorld2
 version: '${project.version}'
 main: me.radcriminal77.miniworld2.MiniWorld2
 api-version: 1.19
+load: STARTUP
 authors:
   - TheKDub
   - RadCriminal77
