@@ -14,9 +14,8 @@ update the old code, but at this point it seems it would be easier to simply re-
 was very messy and to be honest I *hate* migrating legacy code.
 
 ## Dependencies 🧰
-MiniWorld2 **REQUIRES** [Multiverse-Core](https://www.spigotmc.org/resources/multiverse-core.390/) to work!!
-Make sure to also download [Multiverse-Core](https://www.spigotmc.org/resources/multiverse-core.390/) and put it in the
-plugins folder along with MiniWorld2.
+- [Multiverse-Core](https://www.spigotmc.org/resources/multiverse-core.390/) is **required** for MiniWorld2
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard) support is planned but is not yet done
 
 ## Supported Versions:
 - Paper 1.19.4
