@@ -1,11 +1,20 @@
-main: com.thekdub.miniworld.MiniWorld
-name: MiniWorld
-version: 1.0.1
-author: TheKDub
-api-version: 1.16
+name: MiniWorld2
+version: '${project.version}'
+main: me.radcriminal77.miniworld2.MiniWorld2
+api-version: 1.19
+load: STARTUP
+authors:
+  - TheKDub
+  - RadCriminal77
 commands:
-  miniworld:
-    description: MiniWorld Management Command.
-    aliases: [ mw ]
-    permission: miniworld.op
-    usage: /MiniWorld (List | Create | Clone | Delete | GoTo) [WorldName]
+  CreateVoidWorld:
+    description: A helper command to create void worlds
+    usage: /<command> world-name
+  CreateMiniature:
+    description: Creates a miniature (a temporary clone) of the provided world
+    usage: /<command> parent-world
+  RemoveMiniature:
+    description: Deletes a miniature world
+    usage: /<command> miniature-world-name
+depend:
+  - Multiverse-Core

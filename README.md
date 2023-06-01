@@ -1,35 +1,32 @@
-# MiniWorld
+# ⚠️ Notice
 
-MiniWorld is a Minecraft (Spigot) utility plugin for easily creating temporary instances of Minecraft worlds!
-The intended use case for MiniWorld is for instanced dungeons, or other applications where a small temporary world is ideal.
+MiniWorld2 **does not** have all features implemented and is not ready for use!! Sorry, I'm still working on it!
+
+## MiniWorld2
+
+MiniWorld2 is a [Minecraft Paper](https://papermc.io/) utility/API plugin for easily creating temporary instances of Minecraft worlds!
+The intended use case for MiniWorld2 is for mini-games, instanced dungeons, or other applications where
+a small temporary world is ideal. At this point there is no online Maven repository, you just have to
+download, build, and add it to your own local Maven repository if you want to use it.
+
+The original MiniWorld plugin was created by [TheKDub](https://github.com/thekdub). At first, I was going to simply
+update the old code, but at this point it seems it would be easier to simply re-write it as a whole, as the old code
+was very messy and to be honest I *hate* migrating legacy code.
+
+## Dependencies 🧰
+- [Multiverse-Core](https://www.spigotmc.org/resources/multiverse-core.390/) is **required** for MiniWorld2
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard) support is planned but is not yet done
 
 ## Supported Versions:
-- Spigot 1.16.4
+- Paper 1.19.4
 
-MiniWorld may function with additional versions of Minecraft, however this is untested and not guaranteed.
-Support for pre-1.16 is not likely.
+MiniWorld2 may function with additional versions of Minecraft, however this is untested and not guaranteed.
 
-## MiniWorld Commands:
-
-Command | Arguments | Description
-------- | --------- | -----------
-/mw | None | Provides information about MiniWorld and command usage
-/mw list | None | Lists all worlds currently loaded into the server
-/mw create | (world_name) | Creates a new MiniWorld. Note: MiniWorld names are prefixed by `mw/`
-/mw clone | (world_name) | Creates a temporary clone of the targeted MiniWorld.
-/mw delete | (world_name) | Deletes the targeted MiniWorld.
-/mw goto | (world_name) | Teleports you to the desired world.
-
-Access to all commands is currently provided by the permission `miniworld.op`.
-
-## Configurable Options:
-
-Config Entry | Type | Description
------------- | ----------- | -----------
-halt-mob-movement | boolean | Stops mobs from moving in non-cloned MiniWorlds.
-automatically-remove-empty-clones | boolean | Automatically removes clones of MiniWorlds once they're no longer inhabited.
-
-## To-Do:
-
-- [ ] Edit the behavior of 'StopEntityMovement' to not affect entities in clones of MiniWorlds.
-- [ ] Come up with more things to add to the plugin. 
+## Todo:
+- [x] Add createEmptyWorld
+- [x] Add createCloneOf
+- [x] Add deleteWorld
+- [x] Add deleteCloneWorld
+- [ ] Add WorldGuard integration
+- [ ] Rename MiniWorld2 --> MiniWorlds2
+- [ ] Add polish -- make commands have nice formatted responses
