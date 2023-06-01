@@ -10,17 +10,17 @@ import org.jetbrains.annotations.NotNull;
 public class MiniWorld2Manager {
 
     /**
-     * Appends "mw." to a string if it does not already start with it
+     * Appends "mw2." to a string if it does not already start with it
      * @param original The string to convert
      * @return The converted string
      */
     @Contract(pure = true)
     public static String convertToMiniWorldName(@NotNull String original) {
-        if (original.startsWith("mw.")) {
+        if (original.startsWith("mw2.")) {
             return original;
         }
 
-        return "mw." + original;
+        return "mw2." + original;
     }
 
     @NotNull
