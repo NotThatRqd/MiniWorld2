@@ -5,11 +5,12 @@ import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.protection.managers.RegionManager;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
 import org.bukkit.World;
+import org.jetbrains.annotations.NotNull;
 
 public class WorldGuardIntegration {
     private final RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
 
-    public void copyRegions(World b_original, World b_target) {
+    public void copyRegions(@NotNull World b_original, @NotNull World b_target) {
         com.sk89q.worldedit.world.World original = BukkitAdapter.adapt(b_original);
         com.sk89q.worldedit.world.World target = BukkitAdapter.adapt(b_target);
 
