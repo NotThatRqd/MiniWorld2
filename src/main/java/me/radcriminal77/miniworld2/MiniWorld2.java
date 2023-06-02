@@ -7,21 +7,36 @@ import me.radcriminal77.miniworld2.commands.CreateMiniatureCommand;
 import me.radcriminal77.miniworld2.commands.RemoveMiniatureCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.server.ServerLoadEvent;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-public final class MiniWorld2 extends JavaPlugin {
+public final class MiniWorld2 extends JavaPlugin implements Listener {
 
     private static MVWorldManager mvWorldManager;
 
+    @NotNull
     public static MVWorldManager getMvWorldManager() {
         return mvWorldManager;
+    }
+
+    @Nullable
+    private static WorldGuardIntegration worldGuardIntegration;
+
+    @Nullable
+    public static WorldGuardIntegration getWorldGuardIntegration() {
+        return worldGuardIntegration;
     }
 
     @Override
     public void onEnable() {
         this.getLogger().info("hello world!");
+
+        this.getServer().getPluginManager().registerEvents(this, this);
 
         // Get Multiverse Core plugin object, so we can access the MultiVerse plugin API
         MultiverseCore multiverseCore = (MultiverseCore) Bukkit.getServer().getPluginManager().getPlugin("Multiverse-Core");
@@ -32,6 +47,19 @@ public final class MiniWorld2 extends JavaPlugin {
         this.getCommand("CreateVoidWorld").setExecutor(new CreateEmptyWorldCommand());
         this.getCommand("CreateMiniature").setExecutor(new CreateMiniatureCommand());
         this.getCommand("RemoveMiniature").setExecutor(new RemoveMiniatureCommand());
+    }
+
+    @EventHandler
+    public void onServerLoad(ServerLoadEvent e) {
+        // Try to get WorldGuard
+        try {
+            worldGuardIntegration = new WorldGuardIntegration();
+            this.getLogger().info("world guard integration on");
+        } catch (NoClassDefFoundError ex) {
+            // WorldGuard isn't being used
+            worldGuardIntegration = null;
+            this.getLogger().info("world guard integration off");
+        }
     }
 
     @Override
