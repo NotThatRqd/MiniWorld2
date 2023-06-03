@@ -15,7 +15,7 @@ was very messy and to be honest I *hate* migrating legacy code.
 
 ## Dependencies 🧰
 - [Multiverse-Core](https://www.spigotmc.org/resources/multiverse-core.390/) is **required** for MiniWorld2
-- [WorldGuard](https://dev.bukkit.org/projects/worldguard) support is planned but is not yet done
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard) is optional and integration can be disabled in the plugin.yml
 
 ## Supported Versions:
 - Paper 1.19.4
@@ -27,6 +27,6 @@ MiniWorld2 may function with additional versions of Minecraft, however this is u
 - [x] Add createCloneOf
 - [x] Add deleteWorld
 - [x] Add deleteCloneWorld
-- [ ] Add WorldGuard integration
+- [x] Add WorldGuard integration (one possible issue: #5)
 - [ ] Rename MiniWorld2 --> MiniWorlds2
 - [ ] Add polish -- make commands have nice formatted responses

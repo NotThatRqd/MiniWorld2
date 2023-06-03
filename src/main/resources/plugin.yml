@@ -18,3 +18,5 @@ commands:
     usage: /<command> miniature-world-name
 depend:
   - Multiverse-Core
+softdepend:
+  - WorldGuard
