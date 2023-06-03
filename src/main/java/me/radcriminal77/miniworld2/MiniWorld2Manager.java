@@ -80,6 +80,9 @@ public class MiniWorld2Manager {
         World clonedWorld = Bukkit.getWorld(cloneName);
         assert clonedWorld != null;
 
+        // This world is going to be deleted when the server stops, no need to auto save
+        clonedWorld.setAutoSave(false);
+
         // If world guard integration is on copy the regions from the original world to the clone
         if (MiniWorld2.isWorldGuardIntegration()) {
             WorldGuardIntegration.copyRegions(world, clonedWorld);
