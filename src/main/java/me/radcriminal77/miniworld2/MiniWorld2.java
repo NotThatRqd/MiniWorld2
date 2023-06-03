@@ -29,9 +29,17 @@ public final class MiniWorld2 extends JavaPlugin implements Listener {
         return worldGuardIntegration;
     }
 
+    private static MiniWorld2 instance;
+
+    public static MiniWorld2 getInstance() {
+        return instance;
+    }
+
     @Override
     public void onEnable() {
         this.getLogger().info("hello world!");
+
+        instance = this;
 
         this.getServer().getPluginManager().registerEvents(this, this);
 
