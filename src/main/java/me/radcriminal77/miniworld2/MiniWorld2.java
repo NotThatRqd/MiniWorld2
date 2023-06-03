@@ -43,6 +43,9 @@ public final class MiniWorld2 extends JavaPlugin implements Listener {
         assert instance == null;
         instance = this;
 
+        // If a config.yml does not exist, create the default one (src/main/resources/config.yml)
+        this.saveDefaultConfig();
+
         this.getServer().getPluginManager().registerEvents(this, this);
 
         // Get Multiverse Core plugin object, so we can access the MultiVerse plugin API
@@ -58,13 +61,21 @@ public final class MiniWorld2 extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onServerLoad(ServerLoadEvent e) {
-        // Try to get WorldGuard
-        try {
-            WorldGuardIntegration.instantiateContainer();
-            worldGuardIntegration = true;
-            this.getLogger().info("world guard integration on");
-        } catch (NoClassDefFoundError ex) {
-            // WorldGuard isn't being used
+        // Get if we should load WorldGuard from the config
+        boolean shouldLoadWG = this.getConfig().getBoolean("WorldGuardIntegration");
+
+        if (shouldLoadWG) {
+            // Try to get WorldGuard
+            try {
+                WorldGuardIntegration.instantiateContainer();
+                worldGuardIntegration = true;
+                this.getLogger().info("world guard integration on");
+            } catch (NoClassDefFoundError ex) {
+                // WorldGuard isn't being used
+                worldGuardIntegration = false;
+                this.getLogger().info("world guard was not found! disabling world guard integration");
+            }
+        } else {
             worldGuardIntegration = false;
             this.getLogger().info("world guard integration off");
         }
