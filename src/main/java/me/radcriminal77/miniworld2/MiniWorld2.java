@@ -61,6 +61,9 @@ public final class MiniWorld2 extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onServerLoad(ServerLoadEvent e) {
+        // This event is called after everything is done loading
+        // We can check for WorldGuard here
+
         // Get if we should load WorldGuard from the config
         boolean shouldLoadWG = this.getConfig().getBoolean("WorldGuardIntegration");
 
@@ -89,6 +92,9 @@ public final class MiniWorld2 extends JavaPlugin implements Listener {
 
     @Override
     public ChunkGenerator getDefaultWorldGenerator(@NotNull String worldName, String id) {
+        // This method is for the CreateVoidWorld command
+        // It just lets other plugins access the void world gen via "MiniWorld2:empty"
+
         if (id != null && id.equals("empty")) {
             Location spawnLocation = new Location(null, 0, 65, 0);
             return new EmptyChunkGenerator(spawnLocation);

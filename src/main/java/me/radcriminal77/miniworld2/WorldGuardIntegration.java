@@ -7,16 +7,29 @@ import com.sk89q.worldguard.protection.regions.RegionContainer;
 import org.bukkit.World;
 import org.jetbrains.annotations.NotNull;
 
-public class WorldGuardIntegration {
+/**
+ * A package-private class for interacting with the WorldGuard api
+ */
+final class WorldGuardIntegration {
     private static RegionContainer container = null;
-    
-    public static void instantiateContainer() {
+
+    /**
+     * Before this class is ready for use this method must be called.
+     * It's kind of like a constructor, but static. It is also used
+     * to check for WorldGuard support in the main plugin class.
+     */
+    static void instantiateContainer() {
         // We assert container == null because this function should only ever get run once
         assert container == null;
         container = WorldGuard.getInstance().getPlatform().getRegionContainer();
     }
 
-    public static void copyRegions(@NotNull World b_original, @NotNull World b_target) {
+    /**
+     * Copies the regions (and flags of those regions) from one world to another
+     * @param b_original The (Bukkit) world to copy from
+     * @param b_target The (Bukkit) world to copy to
+     */
+    static void copyRegions(@NotNull World b_original, @NotNull World b_target) {
         com.sk89q.worldedit.world.World original = BukkitAdapter.adapt(b_original);
         com.sk89q.worldedit.world.World target = BukkitAdapter.adapt(b_target);
 
