@@ -1,6 +1,7 @@
 # ⚠️ Notice
 
-MiniWorld2 **does not** have all features implemented and is not ready for use!! Sorry, I'm still working on it!
+MiniWorld2 still needs polish. Currently all the messages are just short unformatted responses. MiniWorld2
+also has not been tested that much. If you find a bug or mistake, please open an issue pointing it out! :)
 
 ## MiniWorld2
 
