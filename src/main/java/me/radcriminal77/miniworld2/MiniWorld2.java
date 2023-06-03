@@ -29,7 +29,7 @@ public final class MiniWorld2 extends JavaPlugin implements Listener {
         return worldGuardIntegration;
     }
 
-    private static MiniWorld2 instance;
+    private static MiniWorld2 instance = null;
 
     public static MiniWorld2 getInstance() {
         return instance;
@@ -39,6 +39,8 @@ public final class MiniWorld2 extends JavaPlugin implements Listener {
     public void onEnable() {
         this.getLogger().info("hello world!");
 
+        // Instance should only ever get set once
+        assert instance == null;
         instance = this;
 
         this.getServer().getPluginManager().registerEvents(this, this);
