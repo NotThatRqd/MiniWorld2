@@ -80,10 +80,9 @@ public class MiniWorld2Manager {
         World clonedWorld = Bukkit.getWorld(cloneName);
         assert clonedWorld != null;
 
-        WorldGuardIntegration wgIntegration = MiniWorld2.getWorldGuardIntegration();
-
-        if (wgIntegration != null) {
-            wgIntegration.copyRegions(world, clonedWorld);
+        // If world guard integration is on copy the regions from the original world to the clone
+        if (MiniWorld2.isWorldGuardIntegration()) {
+            WorldGuardIntegration.copyRegions(world, clonedWorld);
         }
 
         return clonedWorld;

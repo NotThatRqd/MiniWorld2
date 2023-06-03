@@ -8,9 +8,15 @@ import org.bukkit.World;
 import org.jetbrains.annotations.NotNull;
 
 public class WorldGuardIntegration {
-    private final RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
+    private static RegionContainer container = null;
+    
+    public static void instantiateContainer() {
+        // We assert container == null because this function should only ever get run once
+        assert container == null;
+        container = WorldGuard.getInstance().getPlatform().getRegionContainer();
+    }
 
-    public void copyRegions(@NotNull World b_original, @NotNull World b_target) {
+    public static void copyRegions(@NotNull World b_original, @NotNull World b_target) {
         com.sk89q.worldedit.world.World original = BukkitAdapter.adapt(b_original);
         com.sk89q.worldedit.world.World target = BukkitAdapter.adapt(b_target);
 

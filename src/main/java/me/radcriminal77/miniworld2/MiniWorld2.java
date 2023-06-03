@@ -13,7 +13,6 @@ import org.bukkit.event.server.ServerLoadEvent;
 import org.bukkit.generator.ChunkGenerator;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public final class MiniWorld2 extends JavaPlugin implements Listener {
 
@@ -24,11 +23,9 @@ public final class MiniWorld2 extends JavaPlugin implements Listener {
         return mvWorldManager;
     }
 
-    @Nullable
-    private static WorldGuardIntegration worldGuardIntegration;
+    private static boolean worldGuardIntegration;
 
-    @Nullable
-    public static WorldGuardIntegration getWorldGuardIntegration() {
+    public static boolean isWorldGuardIntegration() {
         return worldGuardIntegration;
     }
 
@@ -53,11 +50,12 @@ public final class MiniWorld2 extends JavaPlugin implements Listener {
     public void onServerLoad(ServerLoadEvent e) {
         // Try to get WorldGuard
         try {
-            worldGuardIntegration = new WorldGuardIntegration();
+            WorldGuardIntegration.instantiateContainer();
+            worldGuardIntegration = true;
             this.getLogger().info("world guard integration on");
         } catch (NoClassDefFoundError ex) {
             // WorldGuard isn't being used
-            worldGuardIntegration = null;
+            worldGuardIntegration = false;
             this.getLogger().info("world guard integration off");
         }
     }
