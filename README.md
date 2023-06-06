@@ -34,7 +34,7 @@ your plugin :)
 
 ## Dependencies 🧰
 - [Multiverse-Core](https://www.spigotmc.org/resources/multiverse-core.390/) is **required** for MiniWorld2
-- [WorldGuard](https://dev.bukkit.org/projects/worldguard) is optional and integration can be disabled in the plugin.yml
+- [WorldGuard](https://dev.bukkit.org/projects/worldguard) is optional and integration can be disabled in the config.yml
 
 ## Supported Versions:
 - Paper 1.19.4
