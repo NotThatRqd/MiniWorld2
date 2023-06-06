@@ -23,6 +23,9 @@ commands:
     description: Deletes a miniature world
     usage: /<command> miniature-world-name
     permission: MiniWorld2.RemoveMiniature
+  Miniature:
+    description: Create or delete a miniature world
+    usage: /<command> create|remove world-name
 permissions:
   MiniWorld2.CreateVoidWorld:
     description: Allows you to use the command /CreateVoidWorld
