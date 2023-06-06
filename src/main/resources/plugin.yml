@@ -2,10 +2,14 @@ name: MiniWorld2
 version: '${project.version}'
 main: me.radcriminal77.miniworld2.MiniWorld2
 api-version: 1.19
-load: STARTUP
+load: STARTUP # load is on startup because worlds might use MiniWorld2:empty as their generators for void worlds
 authors:
   - TheKDub
   - RadCriminal77
+depend:
+  - Multiverse-Core
+softdepend:
+  - WorldGuard
 commands:
   CreateVoidWorld:
     description: A helper command to create void worlds
@@ -16,7 +20,3 @@ commands:
   RemoveMiniature:
     description: Deletes a miniature world
     usage: /<command> miniature-world-name
-depend:
-  - Multiverse-Core
-softdepend:
-  - WorldGuard
