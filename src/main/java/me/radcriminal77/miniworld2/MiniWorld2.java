@@ -3,9 +3,7 @@ package me.radcriminal77.miniworld2;
 import com.onarandombox.MultiverseCore.MultiverseCore;
 import com.onarandombox.MultiverseCore.api.MVWorldManager;
 import me.radcriminal77.miniworld2.commands.CreateEmptyWorldCommand;
-import me.radcriminal77.miniworld2.commands.CreateMiniatureCommand;
 import me.radcriminal77.miniworld2.commands.MiniatureCommand;
-import me.radcriminal77.miniworld2.commands.RemoveMiniatureCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.event.EventHandler;
@@ -56,8 +54,6 @@ public final class MiniWorld2 extends JavaPlugin implements Listener {
         mvWorldManager = multiverseCore.getMVWorldManager();
 
         this.getCommand("CreateVoidWorld").setExecutor(new CreateEmptyWorldCommand());
-        this.getCommand("CreateMiniature").setExecutor(new CreateMiniatureCommand());
-        this.getCommand("RemoveMiniature").setExecutor(new RemoveMiniatureCommand());
         this.getCommand("Miniature").setExecutor(new MiniatureCommand());
     }
 

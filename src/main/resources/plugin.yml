@@ -15,14 +15,6 @@ commands:
     description: A helper command to create void worlds
     usage: /<command> world-name
     permission: MiniWorld2.CreateVoidWorld
-  CreateMiniature:
-    description: Creates a miniature (a temporary clone) of the provided world
-    usage: /<command> parent-world
-    permission: MiniWorld2.CreateMiniature
-  RemoveMiniature:
-    description: Deletes a miniature world
-    usage: /<command> miniature-world-name
-    permission: MiniWorld2.RemoveMiniature
   Miniature:
     description: Create or delete a miniature world
     usage: /<command> create|remove world-name
